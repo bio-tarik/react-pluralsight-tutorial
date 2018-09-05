@@ -3,8 +3,10 @@ import React from 'react';
 const Answer = (props) => {
   return (
     <div className="col-5">
-      <span>5</span>
-      <span>6</span>
+      {props.selectedNumbers.map(
+        (number, i) =>
+          <span key={i} onClick={() => props.unselectNumber(number)}>{number}</span>
+      )}
     </div>
   );
 }
